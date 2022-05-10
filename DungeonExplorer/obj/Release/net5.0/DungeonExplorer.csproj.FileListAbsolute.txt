@@ -1,0 +1,16 @@
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\bin\Release\net5.0\DungeonExplorer.exe
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\bin\Release\net5.0\DungeonExplorer.deps.json
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\bin\Release\net5.0\DungeonExplorer.runtimeconfig.json
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\bin\Release\net5.0\DungeonExplorer.runtimeconfig.dev.json
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\bin\Release\net5.0\DungeonExplorer.dll
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\bin\Release\net5.0\ref\DungeonExplorer.dll
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\bin\Release\net5.0\DungeonExplorer.pdb
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.csproj.AssemblyReference.cache
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.AssemblyInfoInputs.cache
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.AssemblyInfo.cs
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.csproj.CoreCompileInputs.cache
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.dll
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\ref\DungeonExplorer.dll
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.pdb
+D:\Desktop\Fucker\DungeonExplorer\DungeonExplorer\obj\Release\net5.0\DungeonExplorer.genruntimeconfig.cache
