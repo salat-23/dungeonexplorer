@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\salat23\\Desktop\\dungeonexplorer-master\\DungeonExplorer\\DungeonExplorer.csproj": {}
+    "D:\\Desktop\\dungeonexplorer\\DungeonExplorer\\DungeonExplorer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\salat23\\Desktop\\dungeonexplorer-master\\DungeonExplorer\\DungeonExplorer.csproj": {
+    "D:\\Desktop\\dungeonexplorer\\DungeonExplorer\\DungeonExplorer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\salat23\\Desktop\\dungeonexplorer-master\\DungeonExplorer\\DungeonExplorer.csproj",
+        "projectUniqueName": "D:\\Desktop\\dungeonexplorer\\DungeonExplorer\\DungeonExplorer.csproj",
         "projectName": "DungeonExplorer",
-        "projectPath": "C:\\Users\\salat23\\Desktop\\dungeonexplorer-master\\DungeonExplorer\\DungeonExplorer.csproj",
+        "projectPath": "D:\\Desktop\\dungeonexplorer\\DungeonExplorer\\DungeonExplorer.csproj",
         "packagesPath": "C:\\Users\\salat23\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\salat23\\Desktop\\dungeonexplorer-master\\DungeonExplorer\\obj\\",
+        "outputPath": "D:\\Desktop\\dungeonexplorer\\DungeonExplorer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\salat23\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\salat23\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,18 +53,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.8, 5.0.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

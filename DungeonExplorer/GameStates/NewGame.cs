@@ -1,71 +1,58 @@
 using System;
+using System.Data;
+using DungeonExplorer.CellularAutomata;
 
 namespace DungeonExplorer
 {
     public class NewGame : GameState
     {
-        private double minNum = 0;
-        private PerlinNoise perlinNoise;
-        private int x = 20, y = 20;
+        private WorldGeneration generation;
+        private World world;
+        private int seed = 25565;
+
         public NewGame(DungeonExplorer screen) : base(screen)
         {
-
-            perlinNoise = new PerlinNoise(99);
+            generation = new WorldGeneration(seed);
+            world = generation.GenerateWorld();
         }
 
         public override void Update(float elapsed)
         {
-            int step = 1;
-            double minNumStep = 0.01f;
             switch (Screen.GetPressedKey())
             {
                 case ConsoleKey.W:
-                    minNum+=minNumStep;
+                    seed++;
+                    generation = new WorldGeneration(seed);
+                    world = generation.GenerateWorld();
                     break;
                 case ConsoleKey.S:
-                    minNum-=minNumStep;
-                    if (minNum < 0) minNum = 0;
+                    seed--;
+                    generation = new WorldGeneration(seed);
+                    world = generation.GenerateWorld();
                     break;
-                case ConsoleKey.UpArrow:
-                    y -= step;
-                    break;
-                case ConsoleKey.DownArrow:
-                    y += step;
-                    break;
-                case ConsoleKey.LeftArrow:
-                    x -= step;
-                    break;
-                case ConsoleKey.RightArrow:
-                    x += step;
-                    break;
-            }
-
-            int yscreen = 0;
-            for (int i = y; i < y + 25; i++)
-            {
-                int xscreen = 0;
-                for (int j = x; j < x + 80; j++)
-                {                   // First octave
-                    double number = (perlinNoise.Noise(200 * j, 200 * i, -0.5) + 1) / 2 * 0.7 +
-                                    // Second octave
-                                    (perlinNoise.Noise(400 * j, 400 * i, 0) + 1) / 2 * 0.2 +
-                                    // Third octave
-                                    (perlinNoise.Noise(800 * j, 800 * i, +0.5) + 1) / 2 * 0.1;
-
-                    if (number >= minNum)
-                    {
-                        Screen.Draw("#", xscreen, yscreen);
-                    }
-                    xscreen++;
-                }
-
-                yscreen++;
             }
         }
 
         public override void Display()
         {
-            
+            for (int i = 0; i < 25; i++)
+            {
+                for (int j = 0; j < 80; j++)
+                {
+                    int num = world.IslandMap[j, i];
+                    if (num > 0)
+                    {
+                        char drawable = '.';
+                        if (num > 2) drawable = '~';
+                        if (num > 4) drawable = '=';
+                        if (num > 6) drawable = 'x';
+                        if (num > 10) drawable = 'X';
+                        Screen.Draw(drawable, j, i);
+                    }
+                }
+            }
         }
+
+       
     }
 }
