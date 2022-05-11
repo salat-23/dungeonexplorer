@@ -3,17 +3,17 @@ namespace DungeonExplorer
     public class DungeonExplorer : Game
     {
 
-        private GameState state;
+        public GameState State { get; set; }
 
         public DungeonExplorer() : base(80, 25)
         {
-            state = new SplashScreen(this);
+            State = new SplashScreen(this);
         }
 
         protected override void Update(float elapsed)
         {
-            state.Update(elapsed);
-            state.Display();
+            State.Update(elapsed);
+            State.Display();
         }
     }
 }

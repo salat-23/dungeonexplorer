@@ -1,23 +1,14 @@
 namespace DungeonExplorer
 {
-    public interface IGameState
+
+    public abstract class GameState 
     {
-        protected Screen Screen { get; }
-        public void Update(float elapsed);
+        protected DungeonExplorer Screen { get; }
 
-        public void Display();
-    }
-
-    public abstract class GameState : IGameState
-    {
-        protected Screen Screen { get; }
-
-        public GameState(Screen screen)
+        public GameState(DungeonExplorer screen)
         {
             Screen = screen;
         }
-
-        Screen IGameState.Screen => Screen;
 
         public abstract void Update(float elapsed);
 
