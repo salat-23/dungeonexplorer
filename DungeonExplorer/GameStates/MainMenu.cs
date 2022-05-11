@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace DungeonExplorer
 {
-    public class SplashScreen : GameState
+    public class MainMenu : GameState
     {
         private SelectionBox menuBox;
-        public SplashScreen(DungeonExplorer screen) : base(screen)
+        public MainMenu(DungeonExplorer screen) : base(screen)
         {
             List<SelectionBoxButton> buttons = new List<SelectionBoxButton>();
             buttons.Add(new SelectionBoxButton("New game", "NG"));
