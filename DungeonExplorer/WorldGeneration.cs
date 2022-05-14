@@ -51,7 +51,6 @@ namespace DungeonExplorer
         {
             islandGenerationLife = new SalatIslandAutomata(field, maxX, maxY, Seed);
         }
-
         
         private void InitializeGroundField()
         {
