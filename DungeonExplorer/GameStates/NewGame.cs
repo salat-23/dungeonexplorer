@@ -9,6 +9,7 @@ namespace DungeonExplorer
         private WorldGeneration generation;
         private World world;
         private int seed = 25565;
+        private int displayedNum = 1;
 
         public NewGame(DungeonExplorer screen) : base(screen)
         {
@@ -30,25 +31,22 @@ namespace DungeonExplorer
                     generation = new WorldGeneration(seed);
                     world = generation.GenerateWorld();
                     break;
+                case ConsoleKey.UpArrow:
+                    displayedNum++;
+                    break;
+                case ConsoleKey.DownArrow:
+                    displayedNum--;
+                    break;
             }
         }
 
         public override void Display()
         {
-            for (int i = 0; i < 25; i++)
+            for (int y = 0; y < 25; y++)
             {
-                for (int j = 0; j < 80; j++)
+                for (int x = 0; x < 80; x++)
                 {
-                    int num = world.IslandMap[j, i];
-                    if (num > 0)
-                    {
-                        char drawable = '.';
-                        if (num > 2) drawable = '~';
-                        if (num > 4) drawable = '=';
-                        if (num > 6) drawable = 'x';
-                        if (num > 10) drawable = 'X';
-                        Screen.Draw(drawable, j, i);
-                    }
+                    Screen.Draw(world.Chunks[x, y], x, y);
                 }
             }
         }

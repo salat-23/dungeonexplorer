@@ -111,6 +111,34 @@ namespace DungeonExplorer
                 chars[y * Width + x] = text;
         }
 
+        public void Draw(Chunk chunk, int x, int y)
+        {
+            char chunkChar = '?';
+            switch (chunk.Type)
+            {
+                case LocationType.PLAIN:
+                    chunkChar = '.';
+                    break;
+                case LocationType.WOODS:
+                    chunkChar = '#';
+                    break;
+                case LocationType.HILLS:
+                    chunkChar = '^';
+                    break;
+                case LocationType.BEACH:
+                    chunkChar = '~';
+                    break;
+                case LocationType.MOUNTAINS:
+                    chunkChar = 'A';
+                    break;
+                case LocationType.OCEAN:
+                    chunkChar = ' ';
+                    break;
+            }
+            Draw(chunkChar, x, y);
+        }
+        
+
         public void DrawRect(string charset, int x, int y, int sizeX, int sizeY)
         {
             int maxIndex = charset.Length - 1;

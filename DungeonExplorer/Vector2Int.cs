@@ -1,7 +1,9 @@
+using System;
 using System.Runtime.CompilerServices;
 
 namespace DungeonExplorer
 {
+    [Serializable]
     public class Vector2Int
     {
         public int X { get; set; }

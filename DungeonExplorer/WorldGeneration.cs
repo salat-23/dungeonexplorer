@@ -7,9 +7,10 @@ namespace DungeonExplorer
     {
         private World world;
         private int[,] fieldIslandLand;
-        private int[,] fieldBiome;
+        private double[,] fieldBiome;
         private RuleSet islandGenerationLife;
         private RuleSet biomeGenerationLife;
+        private PerlinNoise perlinNoise;
         public int Seed { get; private set; }
 
         public WorldGeneration(int seed)
@@ -19,17 +20,31 @@ namespace DungeonExplorer
 
         public World GenerateWorld()
         {
+            perlinNoise = new PerlinNoise(Seed);
             InitializeGroundField();
             InitializeBiomeField();
-            world = new World(fieldIslandLand);
+            world = new World(fieldIslandLand, fieldBiome, 80, 25);
             return world;
         }
 
         private void InitializeBiomeField()
         {
-            SimplexNoise.Noise.Seed = Seed;
-            float[,] simplexGenerated = SimplexNoise.Noise.Calc2D(80, 25, 1f);
-            
+            fieldBiome = new double[80, 25];
+            //SimplexNoise.Noise.Calc2D(80, 25, 1f);
+            for (int y = 0; y < 25; y++)
+            {
+                for (int x = 0; x < 80; x++)
+                {
+                    fieldBiome[x, y] = BiomeNoiseFunction(x, y);
+                }
+            }
+        }
+
+        private double BiomeNoiseFunction(double x, double y)
+        {
+            return (perlinNoise.Noise(x, y, 0) + 0.5) +
+                (perlinNoise.Noise(x * 0.324, y * 0.324, 1) + 0.5) * 0.7 +
+                (perlinNoise.Noise(x * 1.5, y * 1.5, 1.5) + 0.5) * 1.2;
         }
         
         private void InitializeRuleSet(int[,] field, int maxX, int maxY)

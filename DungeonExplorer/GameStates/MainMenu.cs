@@ -9,6 +9,7 @@ namespace DungeonExplorer
         public MainMenu(DungeonExplorer screen) : base(screen)
         {
             List<SelectionBoxButton> buttons = new List<SelectionBoxButton>();
+            buttons.Add(new SelectionBoxButton("Big map", "BM"));
             buttons.Add(new SelectionBoxButton("New game", "NG"));
             buttons.Add(new SelectionBoxButton("Options", "OP"));
             buttons.Add(new SelectionBoxButton("Exit", "EX"));
@@ -33,6 +34,9 @@ namespace DungeonExplorer
                         case "NG":
                             Screen.State = new NewGame(Screen);
                             return;
+                        case "BM":
+                            Screen.State = new BigMap(Screen);
+                            break;
                     }
                     break;
                 }
