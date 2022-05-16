@@ -10,17 +10,28 @@ namespace DungeonExplorer
         private int Width { get; }
         private int Height { get; }
 
+        private HashSet<ConsoleKey> holdedKeys;
+
         public Screen(int width, int height)
         {
+            Height = height;
+            Width = width;
+            holdedKeys = new HashSet<ConsoleKey>();
             FastConsole.Init(width, height);
             Clear();
         }
 
-        /*public bool IsPressed(ConsoleKey key)
+        public bool IsPressed(ConsoleKey key)
         {
             bool isPressed = FastConsole.IsPressed(key);
             return isPressed;
-        }*/
+        }
+        
+        public bool IsJustPressed(ConsoleKey key)
+        {
+            bool isPressed = FastConsole.IsJustPressed(key);
+            return isPressed;
+        }
 
         public ConsoleKey? GetPressedKey()
         {
@@ -126,6 +137,10 @@ namespace DungeonExplorer
 
         public void Refresh()
         {
+            for (int i = 0; i < holdedKeys.Count; i++)
+            {
+                
+            }
             FastConsole.Render();
         }
     } 

@@ -38,10 +38,8 @@ namespace DungeonExplorer
           Coord dwBufferCoord,
           ref SmallRect lpWriteRegion);
         
-        /*
         [DllImport("user32.dll")]
         static extern int GetAsyncKeyState(int VKey);
-        */
 
         [StructLayout(LayoutKind.Sequential)]
         public struct Coord
@@ -102,13 +100,12 @@ namespace DungeonExplorer
         {
             Task.Run(() =>
             {
-                string alias = Convert.ToBase64String(new Guid().ToByteArray());
+                string alias = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
                 StringBuilder builder = new StringBuilder();
                 mciSendString($"close {alias}", builder, 0, IntPtr.Zero);
                 mciSendString($"open {sound} type waveaudio alias {alias}", builder, 0, IntPtr.Zero);
                 mciSendString($"play {alias}", builder, 0, IntPtr.Zero);
             });
-
         }
 
         public static void Draw(int x, int y, char character, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
@@ -129,10 +126,21 @@ namespace DungeonExplorer
             }
         }
         
-        /*public static bool IsPressed(ConsoleKey key)
+        public static bool IsPressed(ConsoleKey key)
         {
-            return 0 != (GetAsyncKeyState((int)key) & 0x8000);
-        }*/
+            int keyStatus = GetAsyncKeyState((int)key);
+            if (keyStatus > 0 && keyStatus != 32769)
+            {
+                int test = keyStatus;
+            }
+            return 0 != (keyStatus & 0x8000);
+        }
+        
+        public static bool IsJustPressed(ConsoleKey key)
+        {
+            int keyStatus = GetAsyncKeyState((int)key);
+            return 0 != (keyStatus & 0x0001);
+        }
 
         public static void Clear()
         {

@@ -20,7 +20,18 @@ namespace DungeonExplorer
         }
         public override void Update(float elapsed)
         {
-            switch (Screen.GetPressedKey())
+
+            if (Screen.IsJustPressed(ConsoleKey.S))
+            {
+                menuBox.MoveDown();
+                Screen.Play("Resources/high-pith-beep.wav");
+            }
+            if (Screen.IsJustPressed(ConsoleKey.W))
+            {
+                menuBox.MoveUp();
+                Screen.Play("Resources/high-pith-beep.wav");
+            }
+            /*switch (Screen.GetPressedKey())
             {
                 case ConsoleKey.S:
                     menuBox.MoveDown();
@@ -44,7 +55,7 @@ namespace DungeonExplorer
                     }
                     break;
                 }
-            }
+            }*/
         }
 
         public override void Display()

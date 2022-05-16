@@ -15,7 +15,7 @@ namespace DungeonExplorer
 
         public override void Display()
         {
-            Screen.DrawRect("Hello", 0, 0, 80, 25);
+            Screen.Draw("Hello", 0, 0, ConsoleColor.Green, ConsoleColor.White);
         }
     }
 }
