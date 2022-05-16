@@ -7,7 +7,7 @@ namespace DungeonExplorer
 
         public DungeonExplorer() : base(80, 25)
         {
-            State = new MainMenu(this);
+            State = new TestState(this);
         }
 
         protected override void Update(float elapsed)

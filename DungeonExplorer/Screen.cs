@@ -10,24 +10,17 @@ namespace DungeonExplorer
         private int Width { get; }
         private int Height { get; }
 
-        private char[] chars;
-
         public Screen(int width, int height)
         {
-            Width = width;
-            Height = height;
-            chars = new char[width * height];
+            FastConsole.Init(width, height);
             Clear();
         }
 
-        public bool IsPressed(ConsoleKey key)
+        /*public bool IsPressed(ConsoleKey key)
         {
-            if (Console.KeyAvailable)
-            {
-                return Console.ReadKey(true).Key == key;
-            }
-            return false;
-        }
+            bool isPressed = FastConsole.IsPressed(key);
+            return isPressed;
+        }*/
 
         public ConsoleKey? GetPressedKey()
         {
@@ -41,10 +34,7 @@ namespace DungeonExplorer
 
         public void Clear()
         {
-            for (int i = 0; i < chars.Length; i++)
-            {
-                chars[i] = ' ';
-            }
+            FastConsole.Clear();
         }
 
         private int[] GetSlice(SelectionBoxButton[] array, int selectedIndex, int capacity)
@@ -93,53 +83,25 @@ namespace DungeonExplorer
                 drawed++;
             }
         }
-        public void Draw(string text, int x, int y)
+        public void Draw(string text, int x, int y, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
             if (y > Height - 1 || y < 0) return;
             foreach (var character in text)
             {
                 if (!(x > Width - 1 || x < 0))
-                    chars[y * Width + x] = character;
+                    FastConsole.Draw(x, y, character, foreground, background);
                 x++;
             }
         }
 
-        public void Draw(char text, int x, int y)
+        public void Draw(char text, int x, int y, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
             if (y > Height - 1 || y < 0) return;
             if (!(x > Width - 1 || x < 0))
-                chars[y * Width + x] = text;
+                FastConsole.Draw(x, y, text, foreground, background);
         }
 
-        public void Draw(Chunk chunk, int x, int y)
-        {
-            char chunkChar = '?';
-            switch (chunk.Type)
-            {
-                case LocationType.PLAIN:
-                    chunkChar = '.';
-                    break;
-                case LocationType.WOODS:
-                    chunkChar = '#';
-                    break;
-                case LocationType.HILLS:
-                    chunkChar = '^';
-                    break;
-                case LocationType.BEACH:
-                    chunkChar = '~';
-                    break;
-                case LocationType.MOUNTAINS:
-                    chunkChar = 'A';
-                    break;
-                case LocationType.OCEAN:
-                    chunkChar = ' ';
-                    break;
-            }
-            Draw(chunkChar, x, y);
-        }
-        
-
-        public void DrawRect(string charset, int x, int y, int sizeX, int sizeY)
+        public void DrawRect(string charset, int x, int y, int sizeX, int sizeY, ConsoleColor foreground = ConsoleColor.White, ConsoleColor background = ConsoleColor.Black)
         {
             int maxIndex = charset.Length - 1;
             int strIndex = 0;
@@ -149,41 +111,22 @@ namespace DungeonExplorer
                 {
                     if (ix == 0 || ix == sizeX - 1 || iy == 0 || iy == sizeY - 1)
                     {
-                        Draw(charset[strIndex], x + ix, y + iy);
+                        Draw(charset[strIndex], x + ix, y + iy, foreground, background);
                         strIndex++;
                         if (strIndex > maxIndex) strIndex = 0;
                     }
                 }
             }
         }
+        
+        public void Play(string sound)
+        {
+            FastConsole.Play(sound);
+        }
 
         public void Refresh()
         {
-            byte[] result = new byte[chars.Length + Height];
-            int skippedIndex = 0;
-            bool skip = false;
-            for (int i = 0; i < result.Length; i++)
-            {
-                if ((i - skippedIndex) % Width == 0 && i != 0 && !skip)
-                {
-                    skip = true;
-                    result[i] = (byte) '\n';
-                    skippedIndex++;
-                    continue;
-                }
-
-                skip = false;
-
-                result[i] = (byte) chars[i - skippedIndex];
-            }
-
-            Console.CursorVisible = false;
-            Console.InputEncoding = Encoding.Unicode;
-            Console.SetCursorPosition(0, 0);
-            Stream stdout = Console.OpenStandardOutput(result.Length);
-            stdout.Write(result, 0, result.Length);
-            stdout.Close();
-            stdout.Dispose();
+            FastConsole.Render();
         }
     } 
 }

@@ -1,5 +1,7 @@
 using System;
+using System.Media;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DungeonExplorer
 {
@@ -22,9 +24,11 @@ namespace DungeonExplorer
             {
                 case ConsoleKey.S:
                     menuBox.MoveDown();
+                    Screen.Play("Resources/high-pith-beep.wav");
                     break;
                 case ConsoleKey.W:
                     menuBox.MoveUp();
+                    Screen.Play("Resources/bass-beep.wav");
                     break;
 
                 case ConsoleKey.Enter:
@@ -51,11 +55,5 @@ namespace DungeonExplorer
             Screen.Draw(menuBox, 33, 13);
             Screen.DrawRect("*", 0, 0, 80, 25);
         }
-
-        
     }
-
-    
-
-    
 }

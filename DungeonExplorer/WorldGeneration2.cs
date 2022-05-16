@@ -74,13 +74,13 @@ namespace DungeonExplorer
                             tiles[x, y] = new Tile(type, elevation);
                         }
                     }
-                    Chunk2 chunk = new Chunk2(tiles, chunkSize, new Vector2Int(chunkCountX, chunkCountY));
-                    ChunkSerializer.Serialize(chunk);
+                    Chunk2 chunk = new Chunk2(tiles, chunkSize);
+                    ChunkSerializer.Serialize(chunk, new Vector2Int(chunkCountX, chunkCountY));
                     chunkCountX++;
                 }
                 chunkCountY++;
             }
-            return new World2(DefaultSize);
+            return new World2(DefaultSize, chunkSize);
         }
     }
 }

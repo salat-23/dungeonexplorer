@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace DungeonExplorer
 {
@@ -33,6 +34,32 @@ namespace DungeonExplorer
                 Refresh();
                 lastTime = currentTime;
             }
+        }
+        public void Draw(Chunk chunk, int x, int y)
+        {
+            char chunkChar = '?';
+            switch (chunk.Type)
+            {
+                case LocationType.PLAIN:
+                    chunkChar = '.';
+                    break;
+                case LocationType.WOODS:
+                    chunkChar = '#';
+                    break;
+                case LocationType.HILLS:
+                    chunkChar = '^';
+                    break;
+                case LocationType.BEACH:
+                    chunkChar = '~';
+                    break;
+                case LocationType.MOUNTAINS:
+                    chunkChar = 'A';
+                    break;
+                case LocationType.OCEAN:
+                    chunkChar = ' ';
+                    break;
+            }
+            Draw(chunkChar, x, y);
         }
         protected abstract void Update(float elapsed);
     }

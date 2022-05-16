@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Wr0L4A7HDktKxMMrSmJ5I7PiEBk73jeBUJHjB16DedYe8Hpe72UXk4AYhRnYXf4Ya6f1ncX/LziQ2fM8elKv2Q==",
+  "dgSpecHash": "I5DeQ4Bd5FUEN1LLc7QuZgG+dIoTKxC/9ckbdgunrNXLfpPsEK95HrRLHaysEeAzgrSdZLUutA1KDVkI8a/IlQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\salat23\\Desktop\\dungeonexplorer-master\\DungeonExplorer\\DungeonExplorer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\salat23\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\salat23\\.nuget\\packages\\simplexnoise\\2.0.0\\simplexnoise.2.0.0.nupkg.sha512",
+    "C:\\Users\\salat23\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\salat23\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\salat23\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.8\\microsoft.netcore.app.host.win-x64.5.0.8.nupkg.sha512"
   ],
   "logs": []

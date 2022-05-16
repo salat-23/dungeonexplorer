@@ -49,3 +49,12 @@ D:\Desktop\dungeonexplorer\DungeonExplorer\obj\Debug\net5.0\DungeonExplorer.dll
 D:\Desktop\dungeonexplorer\DungeonExplorer\obj\Debug\net5.0\ref\DungeonExplorer.dll
 D:\Desktop\dungeonexplorer\DungeonExplorer\obj\Debug\net5.0\DungeonExplorer.pdb
 D:\Desktop\dungeonexplorer\DungeonExplorer\obj\Debug\net5.0\DungeonExplorer.genruntimeconfig.cache
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\Resources\bass-beep.wav
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\Resources\high-pith-beep.wav
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\System.Drawing.Common.dll
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\System.Windows.Extensions.dll
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\salat23\Desktop\dungeonexplorer-master\DungeonExplorer\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\System.Windows.Extensions.dll

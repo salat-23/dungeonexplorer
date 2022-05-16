@@ -6,9 +6,9 @@ namespace DungeonExplorer
 {
     public class ChunkSerializer
     {
-        public static void Serialize(Chunk2 chunk)
+        public static void Serialize(Chunk2 chunk, Vector2Int position)
         {
-            string chunkFileName = $"./chunks/{chunk.Position.X}-{chunk.Position.Y}";
+            string chunkFileName = $"./chunks/{position.X}-{position.Y}";
             
             
             IFormatter formatter = new BinaryFormatter();
